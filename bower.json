@@ -1,0 +1,6 @@
+{
+  "name": "paradki",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
