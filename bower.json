@@ -1,6 +1,11 @@
 {
   "name": "paradki",
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "angular": "1.5.0",
+    "bxslider-4": "4.2.12"
+  },
+  "devDependencies": {
+    "angular-ui-router": "^0.4.2"
   }
 }
