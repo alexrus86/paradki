@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 	<head>
 		<title>Экскурсии по парадкам</title>
 		<meta charset="utf-8">
@@ -11,17 +11,31 @@
 		<link href="./css/common.css" rel="stylesheet" >
 		<link href="./css/card.css" rel="stylesheet" >
 		<link href="./css/main.css" rel="stylesheet" >
+		<link href="./css/pages.css" rel="stylesheet" >
 		
 		
-		<script src="./js/jquery-3.1.1.min.js" ></script>
-		<script src="./js/jquery.bxslider.min.js" ></script>
+		<script src="./scripts/jquery.min.js" ></script>
+		<script src="./scripts/jquery.bxslider.js" ></script>
+		<script src="./scripts/angular.min.js" ></script>
+		<script src="./scripts/angular-ui-router.min.js"></script>
+		<script src="./scripts/paradki.js" ></script>
+		
+		<script src="./scripts/templates/templates.js"></script>
+		
+		<script type="text/javascript">
+
+            $(window.document).ready(function () {
+                angular.bootstrap(window.document, ['app']);
+            });
+
+		</script>
 		
 	</head>
 <body>
 		<div class="site-wrapper">
 			<div class="header">
 				<div class="logo">
-						<img src="./assets/logo.jpg">
+						<img src="./images/logo.jpg">
 				</div>
 				<div class="contacts">
 						<a href="tel:+7-812-274-54-89"> <span>tel.:</span> +7-812-274-54-89 </a>
@@ -29,8 +43,8 @@
 				<div class="media">
 					<div class="table-wrapper">
 						<div class="cell-wrapper">
-							<img src="./assets/vk.png">
-							<img src="./assets/inst.png">
+							<img src="./images/vk.png">
+							<img src="./images/inst.png">
 						</div>
 					</div>
 				</div>
@@ -44,23 +58,23 @@
 			</div>
 			<div class="menu">
 				<ul class="menu-list">
-						<li>Экскурсии</li>
-						<li>Расписание</li>
-						<li>Романтические свидания</li>
-						<li>Как заказать</li>
-						<li>О нас</li>
-						<li>Контакты</li>
+						<li><a href="#main">Экскурсии</a></li>
+						<li><a href="#shedule">Расписание</a></li>
+						<!--<li><a href="">Романтические свидания</a></li>-->
+						<li><a href="#booking">Как заказать</a></li>
+						<li><a href="#about-us">О нас</a></li>
+						<li><a href="#contacts">Контакты</a></li>
 				</ul>
 			</div>
 			<div class="photo-slider">
 				<ul class="bxslider">
-				  <a href="http://unbanalpeter.ru/"><li><img src="./img/slider/pic1.png" /></li></a>
-				  <li><img src="./img/slider/pic2.png" /></li>
-				  <li><img src="./img/slider/pic3.png" /></li>
-				  <li><img src="./img/slider/pic4.png" /></li>
+				  <a href="http://unbanalpeter.ru/"><li><img src="./images/slider/pic1.png" /></li></a>
+				  <li><img src="./images/slider/pic2.png" /></li>
+				  <li><img src="./images/slider/pic3.png" /></li>
+				  <li><img src="./images/slider/pic4.png" /></li>
 				</ul>
 			</div>
-			<div ng-view class="main-content">
+			<div ui-view class="main-content">
 				
 			</div>
 		</div>

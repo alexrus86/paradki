@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 						dest: "<%= destMainDir %>/<%= dirs.js %>/angular.min.js"
 					},
 					{
-						src: "./bower_components/angular-ui-router/angular-ui-router.min.js",
+						src: "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
 						dest: "<%= destMainDir %>/<%= dirs.js %>/angular-ui-router.min.js"
 					},
 					{

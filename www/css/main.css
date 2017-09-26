@@ -112,6 +112,11 @@
 		background-color: #f8dc33;
 	}
 	
+	.menu-list a {
+		text-decoration: none;
+		padding: 15px 0;
+	}
+	
 	.main-content {
 		min-height: 400px;
 		padding: 10px 10px 0px;
