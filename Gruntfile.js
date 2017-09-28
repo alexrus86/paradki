@@ -83,6 +83,10 @@ module.exports = function(grunt) {
 			libs: {
 				files:[
 					{
+						src: "./bower_components/firebase/firebase.js",
+						dest: "<%= destMainDir %>/<%= dirs.js %>/firebase.js"
+					},
+					{
 						src: "./bower_components/jquery/dist/jquery.min.js",
 						dest: "<%= destMainDir %>/<%= dirs.js %>/jquery.min.js"
 					},
@@ -98,6 +102,15 @@ module.exports = function(grunt) {
 						src: "./bower_components/bxslider-4/src/js/jquery.bxslider.js",
 						dest: "<%= destMainDir %>/<%= dirs.js %>/jquery.bxslider.js"
 					}]
+			},
+			toPublic:{
+				files:[
+				{
+					expand: true,	
+					cwd: "./www",
+					src: "**",
+					dest: "./public"
+				}]
 			}
 		}
 		
