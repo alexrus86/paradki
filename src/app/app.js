@@ -1,20 +1,28 @@
 (function (angular) {
-    debugger;
+
     angular.module('app', [
         'ui.router',
-        'templates.app'
+        'templates.app',
+		'excursionStorage.service',
+		'main',
+		'excursionItem'
     ])
         .config(function ($stateProvider, $urlRouterProvider) {
-            debugger;
+
         $urlRouterProvider.otherwise('/main');
             
         $stateProvider.state('main', {
 						url: '/main',
-						templateUrl: 'main.tpl.html'
+						templateUrl: 'main.tpl.html',
+						controller : 'MainCtrl as main'
 					}).state('excursion-item', {
 						url: '/excursions/item/:id',
-						templateUrl: 'excursion.tpl.html',
-						controller : 'ExcursionItemCtrl as ex-item'
+						//url: '/excursion',
+						templateUrl: 'excursionItem.tpl.html',
+						controller : 'ExcursionItemCtrl as item',
+						params: {
+							obj: null
+						}
 					}).state('about', {
 						url: '/about-us',
 						templateUrl: 'about.tpl.html'       

@@ -1,4 +1,4 @@
-angular.module('templates.app', ['about.tpl.html', 'booking.tpl.html', 'contacts.tpl.html', 'main.tpl.html', 'schedule.tpl.html']);
+angular.module('templates.app', ['about.tpl.html', 'booking.tpl.html', 'contacts.tpl.html', 'excursionItem.tpl.html', 'partial-test1.tpl.html', 'main.tpl.html', 'schedule.tpl.html']);
 
 angular.module("about.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("about.tpl.html",
@@ -116,8 +116,43 @@ angular.module("contacts.tpl.html", []).run(["$templateCache", function ($templa
     "</div>");
 }]);
 
+angular.module("excursionItem.tpl.html", []).run(["$templateCache", function ($templateCache) {
+  $templateCache.put("excursionItem.tpl.html",
+    "<div>\n" +
+    "	{{item.currentItem.id}}\n" +
+    "	\n" +
+    "	<div ng-include src=\"'partial-test1.tpl.html'\"/></div>\n" +
+    "</div>");
+}]);
+
+angular.module("partial-test1.tpl.html", []).run(["$templateCache", function ($templateCache) {
+  $templateCache.put("partial-test1.tpl.html",
+    "<div style=\"color:red\">\n" +
+    "	test\n" +
+    "</div>");
+}]);
+
 angular.module("main.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("main.tpl.html",
+    "<div class=\"excursion-list-wrapper\">\n" +
+    "	<div class=\"card\" ng-repeat=\"item in main.excursions\">\n" +
+    "		<div class=\"img-wrapper\">\n" +
+    "			<img src=\"./images/excursions/4XfCDAb0QN8.310x310.jpg\">\n" +
+    "		</div>\n" +
+    "		<p class=\"excursion-date\"> 16 марта 2017</p>\n" +
+    "		<p class=\"excursion-name\">{{item.name}}</p>\n" +
+    "		<div class=\"excursion-details\">\n" +
+    "			<p>\n" +
+    "				<span class=\"excursion-duration\">{{item.duration}}</span>\n" +
+    "				<span class=\"excursion-type\"> {{item.type}}</span>\n" +
+    "			</p>\n" +
+    "			<span class=\"excursion-price\">{{item.price}} Р</span>\n" +
+    "			<button ng-click=\"main.goToDetails(item)\">Подробнее</button>\n" +
+    "		</div>\n" +
+    "	</div>\n" +
+    "</div>\n" +
+    "\n" +
+    "<!--\n" +
     "<div class=\"excursion-list-wrapper\">\n" +
     "	<div class=\"card\">\n" +
     "		<div class=\"img-wrapper\">\n" +
@@ -158,7 +193,7 @@ angular.module("main.tpl.html", []).run(["$templateCache", function ($templateCa
     "				<button>Подробнее</button>\n" +
     "		</div>\n" +
     "	</div>\n" +
-    "</div>");
+    "</div>-->");
 }]);
 
 angular.module("schedule.tpl.html", []).run(["$templateCache", function ($templateCache) {

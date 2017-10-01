@@ -1,4 +1,23 @@
 ﻿<div class="excursion-list-wrapper">
+	<div class="card" ng-repeat="item in main.excursions">
+		<div class="img-wrapper">
+			<img src="./images/excursions/4XfCDAb0QN8.310x310.jpg">
+		</div>
+		<p class="excursion-date"> 16 марта 2017</p>
+		<p class="excursion-name">{{item.name}}</p>
+		<div class="excursion-details">
+			<p>
+				<span class="excursion-duration">{{item.duration}}</span>
+				<span class="excursion-type"> {{item.type}}</span>
+			</p>
+			<span class="excursion-price">{{item.price}} Р</span>
+			<button ng-click="main.goToDetails(item)">Подробнее</button>
+		</div>
+	</div>
+</div>
+
+<!--
+<div class="excursion-list-wrapper">
 	<div class="card">
 		<div class="img-wrapper">
 			<img src="./images/excursions/4XfCDAb0QN8.310x310.jpg">
@@ -38,4 +57,4 @@
 				<button>Подробнее</button>
 		</div>
 	</div>
-</div>
+</div>-->

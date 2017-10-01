@@ -66,6 +66,7 @@ span.excursion-duration::before {
 	display: inline-block;
 	height: 16px;
 	width: 16px;
+	margin-right: 10px; 
 	background-image:url("../assets/time.png");
 	background-size: 16px 16px;
 	content: '';
