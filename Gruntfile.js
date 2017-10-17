@@ -78,6 +78,14 @@ module.exports = function(grunt) {
 					{
 						src: "./bower_components/bxslider-4/src/css/jquery.bxslider.css",
 						dest: "<%= destMainDir %>/<%= dirs.css %>/jquery.bxslider.css"	
+					},
+					{
+						src: "./bower_components/animate.css/animate.css",
+						dest: "<%= destMainDir %>/<%= dirs.css %>/animate.css"	
+					},
+					{
+						src: "./bower_components/magic/magic.css",
+						dest: "<%= destMainDir %>/<%= dirs.css %>/magic.css"	
 					}]
 			},
 			libs: {
@@ -101,7 +109,12 @@ module.exports = function(grunt) {
 					{
 						src: "./bower_components/bxslider-4/src/js/jquery.bxslider.js",
 						dest: "<%= destMainDir %>/<%= dirs.js %>/jquery.bxslider.js"
-					}]
+					},
+					{
+						src: "./bower_components/desoslide/src/js/jquery.desoslide.js",
+						dest: "<%= destMainDir %>/<%= dirs.js %>/jquery.desoslide.js"
+					}
+					]
 			},
 			toPublic:{
 				files:[

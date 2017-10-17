@@ -1,0 +1,25 @@
+.company-contacts,
+.about-us,
+.excursion-booking,
+.schedule
+{
+	padding: 20px;
+	text-align: left;
+}
+
+.company-contacts ul,
+.about-us ul,
+.excursion-booking ul,
+.schedule ul
+{
+	list-style: none;
+}
+
+.company-contacts p,
+.about-us p,
+.excursion-booking p,
+.schedule p
+{
+    margin: 20px 0px 20px;
+}
+

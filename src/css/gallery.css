@@ -1,0 +1,30 @@
+.item-gallery .desoslide-overlay {
+	padding: 0px;
+}
+
+.item-gallery .desoslide-wrapper img{
+	width: 99%;
+	max-width: 650px;
+}
+
+.item-gallery ul {
+	list-style:none;
+}
+
+.item-gallery ul li {
+	display: inline-block;
+}
+
+.item-gallery ul li img{
+	margin-right: 10px;
+}
+
+.item-gallery .desoslide-controls-wrapper {
+	bottom: 0px;
+}
+
+
+
+
+
+

@@ -5,13 +5,19 @@
         'templates.app',
 		'excursionStorage.service',
 		'main',
-		'excursionItem'
+		'excursionItem',
+		'menuButtonComponent'
     ])
         .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/main');
             
-        $stateProvider.state('main', {
+        $stateProvider
+					.state('app', {
+						abstract: true,
+						template: '<ui-view />'
+					})
+					.state('main', {
 						url: '/main',
 						templateUrl: 'main.tpl.html',
 						controller : 'MainCtrl as main'
@@ -19,7 +25,7 @@
 						url: '/excursions/item/:id',
 						//url: '/excursion',
 						templateUrl: 'excursionItem.tpl.html',
-						controller : 'ExcursionItemCtrl as item',
+						controller : 'ExcursionItemCtrl as itemCtrl',
 						params: {
 							obj: null
 						}

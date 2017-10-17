@@ -1,5 +1,29 @@
-<div>
-	{{item.currentItem.id}}
+<div class="excursion-item">
+	<p>
+		<span ng-click="">На главную</span>
+		<span class="delimeter"></span>
+		<span>{{itemCtrl.currentItem.name}}</span>
+	</p> 
+	<h2>Наименование экскурсии &nbsp{{itemCtrl.currentItem.name}}</h2>
+	<hr>
+	<div class="item-gallery">
+		<div id="slideshow1"></div>
+		<div>
+			<ul id="slideshow1_thumbs" class="">
+				<li ng-repeat="item in itemCtrl.photosArr">
+					<a ng-href="{{item.img}}">
+						<img ng-src="{{item.thumb}}">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+	<div class="excursion-chars">
+		<span class="excursion-duration">Продолжительность - &nbsp<b>{{itemCtrl.currentItem.duration}}</b></span>
+		<span class="">Транспорт - &nbsp<b>{{itemCtrl.currentItem.type}}</b></span>
+	</div>
+	<hr>
 	
-	<div ng-include src="'partial-test1.tpl.html'"/></div>
+	<div class="excursion-item-description" ng-include src="'partial-test1.tpl.html'"/></div>
 </div>

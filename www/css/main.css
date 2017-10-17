@@ -255,4 +255,29 @@
      }
 }
 
+#modalMenu {
+	display:none;
+	position:absolute;
+	top:96px;
+	right:0px;
+	z-index: 10000;
+	width:200px;
+	height:290px;
+	background-color:#f8dc33;
+	font-size:large;
+	opacity:0.9;
+}
+
+#modalMenu ul {
+	list-style:none;
+}
+
+#modalMenu ul li a{
+	display:inline-block;
+	margin:15px;
+	text-decoration: none;
+}
+
+
+
 	

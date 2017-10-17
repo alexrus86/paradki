@@ -1,0 +1,41 @@
+hr {
+	width: 100%;
+}
+
+.delimeter {
+	background-image: url(../assets/ico-breadcrumb.svg);
+    background-repeat: no-repeat;
+    color: transparent;
+    display: inline-block;
+    height: 20px;
+    width: 10px;
+    position: relative;
+    top: 2px;
+    margin: 0 10px;
+}
+
+.excursion-item {
+	padding: 0px 20px 0px 20px;
+}
+
+.excursion-item h2 {
+	text-align:left;
+}
+
+.excursion-item p {
+	text-align:left;
+}
+
+.excursion-chars {
+	margin-left: 70px;
+	text-align: left;
+}
+
+.excursion-chars span:before {
+	
+}
+
+.excursion-item-description {
+	padding: 40px;
+}
+
