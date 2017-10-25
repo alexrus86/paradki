@@ -5,7 +5,7 @@
     ])
         .controller('ExcursionItemCtrl', ExcursionItemCtrl);
     
-    function ExcursionItemCtrl(excursionStorageService,$stateParams) {
+    function ExcursionItemCtrl(excursionStorageService,$stateParams,$state,$rootScope) {
         
         var vm = this;
 		vm.currentItem = null;
@@ -22,9 +22,27 @@
 			return tempArr;
 		}
 		
-		vm.currentItem = excursionStorageService.getById(Number($stateParams.id));
+		function goToMain(){
+			$state.go("main");
+		}
 		
-		vm.photosArr = getExcursionPhotos();
+		vm.goToMain = goToMain;
+		
+		function loadData(){
+			vm.currentItem = excursionStorageService.getById(Number($stateParams.id));
+			vm.photosArr = getExcursionPhotos();
+		}
+		
+		try{
+			loadData();
+		}catch(err){
+			
+		}
+		
+		$rootScope.$on('load:excursions', function(){
+			loadData();
+			$state.reload();
+		});	
 		
 		setTimeout(function(){
 			$('#slideshow1').desoSlide({

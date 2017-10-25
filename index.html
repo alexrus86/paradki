@@ -24,6 +24,10 @@
 		
 		<!--<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>-->
 		<script src="./scripts/firebase.js"></script>
+		
+		<!--script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>-->
 		<script>
 		  // Initialize Firebase
 		  var config = {
@@ -37,12 +41,13 @@
 		  firebase.initializeApp(config);
 		</script>
 		<script src="./scripts/jquery.min.js" ></script>
-		<script src="./scripts/jquery.bxslider.js" ></script>
 		<script src="./scripts/angular.min.js" ></script>
 		<script src="./scripts/angular-ui-router.min.js"></script>
 		<script src="./scripts/jquery.desoslide.js"></script>
+		<script src="./scripts/jquery.bxslider.js" ></script>
+		<script src="./scripts/loadingoverlay.js"></script>
 
-		<script src="./scripts/paradki.js" ></script>
+		<script src="./scripts/paradki.js"></script>
 		
 		<script src="./scripts/templates/templates.js"></script>
 		
@@ -73,19 +78,11 @@
 					</div>
 				</div>
 				<menu-button-component></menu-button-component>
-				<!--<div class="compressed-menu">
-					<div class="menu-btn" ng-click="">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</div>-->
 			</div>
 			<div class="menu">
 				<ul class="menu-list">
 						<li><a href="#main">Экскурсии</a></li>
 						<li><a href="#shedule">Расписание</a></li>
-						<!--<li><a href="">Романтические свидания</a></li>-->
 						<li><a href="#booking">Как заказать</a></li>
 						<li><a href="#about-us">О нас</a></li>
 						<li><a href="#contacts">Контакты</a></li>

@@ -6,7 +6,8 @@
 		'excursionStorage.service',
 		'main',
 		'excursionItem',
-		'menuButtonComponent'
+		'menuButtonComponent',
+		'initializeApp.service'
     ])
         .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -16,6 +17,8 @@
 					.state('app', {
 						abstract: true,
 						template: '<ui-view />'
+						//добавить сюда resolve function + controller обернуть во вьюху меню и статическую часть шаблона - 
+						// всё это для кантроля инициализации.
 					})
 					.state('main', {
 						url: '/main',
@@ -43,10 +46,9 @@
 						templateUrl: 'schedule.tpl.html'       
 					});
         })
-        .run(function () {           
+        .run(function (initializeAppService) {           
             
-            //$rootScope.$on('$stateChangeStart', onRouteStateChangeStart);
-            
+            initializeAppService.run();
         });
     
     

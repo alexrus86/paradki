@@ -7,16 +7,18 @@
     ])
         .controller('MainCtrl', MainCtrl);
     
-    function MainCtrl(excursionStorageService,$state) {
+    function MainCtrl(excursionStorageService, $state, $rootScope) {
         
-        var vm = this;
-		
-		debugger;
-		
+        var vm = this;	
+			
 		vm.excursions = excursionStorageService.get();
-		
+			
+		$rootScope.$on('load:excursions', function(){
+			vm.excursions = excursionStorageService.get();
+			$state.reload();
+		});			
+
 		vm.goToDetails = function(item){
-			debugger;
 			$state.go('excursion-item',{ id:item.id });	
 		};
     }

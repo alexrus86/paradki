@@ -86,6 +86,10 @@ module.exports = function(grunt) {
 					{
 						src: "./bower_components/magic/magic.css",
 						dest: "<%= destMainDir %>/<%= dirs.css %>/magic.css"	
+					},
+					{
+						src: "./bower_components/jquery-loading/dist/jquery.loading.css",
+						dest: "<%= destMainDir %>/<%= dirs.css %>/jquery.loading.css"			
 					}]
 			},
 			libs: {
@@ -113,6 +117,10 @@ module.exports = function(grunt) {
 					{
 						src: "./bower_components/desoslide/src/js/jquery.desoslide.js",
 						dest: "<%= destMainDir %>/<%= dirs.js %>/jquery.desoslide.js"
+					},
+					{
+						src: "./bower_components/gasparesganga-jquery-loading-overlay/src/loadingoverlay.js",
+						dest: "<%= destMainDir %>/<%= dirs.js %>/loadingoverlay.js"
 					}
 					]
 			},

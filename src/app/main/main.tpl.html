@@ -1,7 +1,8 @@
 ﻿<div class="excursion-list-wrapper">
 	<div class="card" ng-repeat="item in main.excursions">
 		<div class="img-wrapper">
-			<img src="./images/excursions/4XfCDAb0QN8.310x310.jpg">
+			<!--<img src="./images/excursions/4XfCDAb0QN8.310x310.jpg">-->
+			<img ng-src="{{item.cardPhoto}}">
 		</div>
 		<p class="excursion-date"> 16 марта 2017</p>
 		<p class="excursion-name">{{item.name}}</p>

@@ -140,7 +140,7 @@ angular.module("excursionItem.tpl.html", []).run(["$templateCache", function ($t
   $templateCache.put("excursionItem.tpl.html",
     "<div class=\"excursion-item\">\n" +
     "	<p>\n" +
-    "		<span ng-click=\"\">На главную</span>\n" +
+    "		<span ng-click=\"itemCtrl.goToMain()\">На главную</span>\n" +
     "		<span class=\"delimeter\"></span>\n" +
     "		<span>{{itemCtrl.currentItem.name}}</span>\n" +
     "	</p> \n" +
@@ -189,7 +189,8 @@ angular.module("main.tpl.html", []).run(["$templateCache", function ($templateCa
     "<div class=\"excursion-list-wrapper\">\n" +
     "	<div class=\"card\" ng-repeat=\"item in main.excursions\">\n" +
     "		<div class=\"img-wrapper\">\n" +
-    "			<img src=\"./images/excursions/4XfCDAb0QN8.310x310.jpg\">\n" +
+    "			<!--<img src=\"./images/excursions/4XfCDAb0QN8.310x310.jpg\">-->\n" +
+    "			<img ng-src=\"{{item.cardPhoto}}\">\n" +
     "		</div>\n" +
     "		<p class=\"excursion-date\"> 16 марта 2017</p>\n" +
     "		<p class=\"excursion-name\">{{item.name}}</p>\n" +
