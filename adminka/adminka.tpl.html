@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<title>Тестовая страница админки</title>
+		
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./scripts/adminka.js"></script>
+		
+		<link href="./css/main.css" rel="stylesheet">
+		
+	</head>
+	<body>
+		<div id="container">
+			<div id="adminka">
+				<h1>Административная панель</h1>
+				<div class="menu">
+					<ul>
+						<li>Добавить экскурсию</li>
+						<li>Редактировать экскурсию</li>
+						<li>Удалить экскурсию</li>
+					</ul>
+				</div>
+				<div class="menu-add-options">
+					<h3>Характеристики экскурсии</h3>
+					<label for="excursion-name">Наименование</label><br>
+					<input id="excursion-name" type="text"><br>
+					<label for="excursion-cost">Стоимость</label><br>
+					<input id="excursion-cost" type="text"><br>
+					<label for="excursion-duration">Продолжительность</label><br>
+					<input id="excursion-duration" type="text"><br>
+					<h3>Добавить картинки для галерии экскурсии</h3>
+					<input class="add-main-gallery-image" type="file" accept=".jpg">
+					<div id="main-gallery-images-container">
+					</div>
+					<h3>Добавить картинку для карточки описания экскурсии</h3>
+					<input class="add-main-image" type="file" accept=".jpg">
+					<div id="main-image-container">
+					</div>
+					<h3>Добавить описание</h3>
+					<div class="add-menu-buttons">
+						<button>Добавить</button>
+						<button>Сбросить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(window.document).ready(function(){
+				
+				var mainPhotoFileArrBase64 = [],
+					previewPhotoFileArrBase64 = [];
+				
+				$(".add-main-gallery-image").change(function(evt){
+					
+					loadImage(this.files[0],function(data){
+						
+						$("#main-gallery-images-container")
+							.append("<div class='gallery-image-wrapper'><img class='main-images' src='" + data + "'><button class='add-preview-photo'>Добавить preview фото</button></div>");
+							
+						var $imageWrapper = $(".gallery-image-wrapper")
+							.last()
+							.append("<input style='display:none' class='add-preview-gallery-image' type='file' accept='.jpg'>");
+						
+						$(".add-preview-gallery-image", $imageWrapper).on("change",function(){
+						
+							loadImage(this.files[0],function(data){					
+								$imageWrapper.append("<img class='preview-image' src='" + data + "'>");
+							}).then(function(data){
+								previewPhotoFileArrBase64[previewPhotoFileArrBase64.length] = data;
+							});
+						});
+
+						$(".add-preview-photo", $imageWrapper).on("click", function(evt){
+				
+							evt.stopImmediatePropagation();
+					
+							$(this).css("display","none");
+							$(".add-preview-gallery-image", $imageWrapper).trigger("click");
+						});						
+						
+								
+					}).then(function(data){
+							mainPhotoFileArrBase64[mainPhotoFileArrBase64.length] = data;
+					});
+					
+					this.value = null;
+				});
+			});
+					
+			function loadImage(file, callback) {
+
+				var reader = new FileReader(),
+					$defferedObj = $.Deferred();
+				
+				function readFile(file){
+					reader.readAsDataURL(file);
+				}
+				
+				reader.onload = function(event) {
+				
+					if(callback){
+						callback(event.target.result);
+					}
+				
+					$defferedObj.resolve(event.target.result);
+				}
+				
+				readFile(file);
+				
+				return $defferedObj.promise();
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+#container {
+	width: 1000px;
+	margin: 0  auto;
+}
+
+#adminka h1 {
+	margin: 0px;
+    padding: 10px;
+	text-align:center;
+	border-bottom: 1px lightblue solid;
+}
+
+.menu {
+	display: inline-block;
+	width: 30%;
+	height: 100%;
+    border-right: 1px lightblue solid;
+}
+
+.menu-add-options {
+	display: inline-block;
+	position: relative;
+	padding: 20px;
+	//max-width: 70%;
+	//width: calc(70% - 80px);
+	height:calc(100% - 80px);
+}
+
+//.menu-add-options .add-menu-buttons {
+//	position: absolute;
+//    bottom: 40px;
+//}
+
+.menu, .menu-add-options {
+	vertical-align: top;
+} 
+
+.menu ul {
+	list-style: none;
+}
+
+.menu ul li {
+	display: inline-block;
+	margin: 10px;
+	//background-color: blue;
+}
+
+.menu ul li:hover {
+	color:lightblue;
+}
+
+#main-gallery-images-container {
+	width: 400px;
+}
+
+.gallery-image-wrapper {
+	display:inline-block;
+	vertical-align: top;
+	margin: 10px;
+	border: 1px darkgrey dotted;
+    padding: 2px;
+}
+
+.gallery-image-wrapper img {
+	display: block;
+	width: 150px;
+    margin-bottom: 10px;
+}
+
+.gallery-image-wrapper .preview-image {
+	width:50px;
+	height:50px;
+}
+
